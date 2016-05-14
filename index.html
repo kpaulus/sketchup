@@ -6,6 +6,7 @@
         <title>Sketchup Model Viewer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link href="css/loading.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <script src="js/three.min.js"></script>
@@ -15,6 +16,8 @@
         <script src="js/stats.min.js"></script>
         <script src="js/loader.js"></script>
 
-        <div style="position: absolute; top: 10px; left: 20px; text-align: center;"></div>
+        <div style="position: absolute; top: 10px; left: 20px; text-align: center;">
+            <div id="loading" class="loading">Loading&#8230;</div>
+        </div>
     </body>
 </html>

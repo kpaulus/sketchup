@@ -85,6 +85,7 @@ var objModel = {
       object.updateMatrix();
       object.scale.set(1, 1, 1);
       objModel.scene.add(object);
+      document.getElementById("loading").style.display = "none";
     });
   }
 };
