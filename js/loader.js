@@ -20,7 +20,7 @@ var objModel = {
     var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 1, FAR = 2000;
     this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
     this.scene.add(this.camera);
-    this.camera.position.set(0, 100, 300);
+    this.camera.position.set(755, 65, -60);
     this.camera.lookAt(new THREE.Vector3(0,0,0));
 
     // prepare renderer
@@ -54,45 +54,18 @@ var objModel = {
     this.stats.domElement.style.zIndex = 1;
     this.container.appendChild( this.stats.domElement );
 
-    // add spot light
-    //var spLight = new THREE.SpotLight(0xffffff, 1.75, 1000, Math.PI / 3);
-    //spLight.castShadow = false;
-    //spLight.position.set(-100, 300, -50);
-    //this.scene.add(spLight);
-
-    // add hemisphere light
-    //var hLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
-    //hLight.color.setHSL(0.6, 0.75,0.5);
-    //hLight.groundColor.setHSL(0.0095,0.5,0.5);
-    //hLight.position.set(0,1000,0);
-    //this.scene.add(hLight);
-
-    // add directional light
-    //var dLight = new THREE.DirectionalLight(0xffffff);
-    //dLight.castShadow = false;
-    ///dLight.position.set(-0,0.75,1);
-    //dLight.position.multiplyScalar(50);
-    //this.scene.add(dLight);
-
-    // add ambient light
-    //var light = new THREE.AmbientLight(0x404040);
-    //this.scene.add(ambLight);
-
-    // add point light
-    // Lightening
+    // add directional lightening
     var directionalLight1 = new THREE.DirectionalLight(0xffffff, 1.0);
     directionalLight1.position.set(1, 1, 1);
     var directionalLight2 = new THREE.DirectionalLight(0xffffff, 1.0);
     directionalLight2.position.set(-1, 1, 1);
     var directionalLight3 = new THREE.DirectionalLight(0xffffff, 1.0);
     directionalLight3.position.set(1, 1, -1);
-    var directionalLight4 = new THREE.DirectionalLight(0xffffff, 1.0);
-    directionalLight4.position.set(1, 1, -1);
 
     this.scene.add(directionalLight1);
     this.scene.add(directionalLight2);
     this.scene.add(directionalLight3);
-    //this.scene.add(directionalLight4);
+
     // load a model
     this.loadModel();
   },
@@ -133,6 +106,8 @@ function update() {
 function render() {
   if (objModel.renderer) {
     objModel.renderer.render(objModel.scene, objModel.camera);
+    //view = objModel.camera.position;
+    //console.log("Position:" + view.x + " " + view.y + " " + view.z);
   }
 }
 

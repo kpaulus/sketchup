@@ -234,7 +234,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 		phi = Math.max( this.minPolarAngle, Math.min( this.maxPolarAngle, phi ) );
 
 		// restrict phi to be betwee EPS and PI-EPS
-		phi = Math.max( EPS, Math.min( Math.PI/2 - EPS, phi ) );
+		phi = Math.max( EPS, Math.min( Math.PI/1.85 - EPS, phi ) );
 
 		var radius = offset.length() * scale;
 
